@@ -6,12 +6,16 @@ function solution(d, budget) {
 
   function tree() {
     const min = Math.min(...d);
+    const num = d.indexOf(min);
+    d = d.filter((e, index) => {
+      // return e !== min;
 
-    d = d.filter((e) => {
-      return e !== min;
+      if (index !== num) {
+        return e;
+      }
     });
     sum += min;
-    
+
     if (sum <= budget) {
       count++;
       tree();
@@ -20,7 +24,7 @@ function solution(d, budget) {
 
   tree();
 
-  console.log(count);
+  // console.log(count);
 
   return count;
 }
