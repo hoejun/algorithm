@@ -1,0 +1,21 @@
+function solution(numbers) {
+  const answer = [];
+  const newNumbers = numbers.slice();
+
+  numbers.forEach((item, i) => {
+    newNumbers.forEach((e, index) => {
+      if (i !== index) {
+        answer.push(e + item);
+      }
+    });
+  });
+  let s = [...new Set(answer)];
+  // console.log(s);
+  s = s.sort(function (a, b) {
+    if (a > b) return 1;
+    if (a === b) return 0;
+    if (a < b) return -1;
+  });
+  
+  return s;
+}
