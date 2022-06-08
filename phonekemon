@@ -1,0 +1,18 @@
+function solution(nums) {
+  let answer = 0;
+  const num = nums.length / 2;
+  const setNums = [...new Set(nums)];
+
+  if (num < setNums.length) {
+    //answer = setNums.length - 1;
+      answer = num;
+  }
+  if (num === setNums.length) {
+    answer = setNums.length;
+  }
+  if (num > setNums.length) {
+    answer = setNums.length;
+  }
+
+  return answer;
+}
